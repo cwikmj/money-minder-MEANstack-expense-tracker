@@ -1,0 +1,50 @@
+<div class="settings-container">
+    <div class="password-form-wrapper">
+      <form [formGroup]="passwordForm" (ngSubmit)="onSubmit()">
+        <h2>PASSWORD CHANGE</h2>
+  
+        <div class="form-group">
+          <label for="currentPassword">current password</label>
+          <input
+            type="password"
+            id="currentPassword"
+            formControlName="currentPassword"
+            placeholder="enter current password"
+          />
+          <div *ngIf="passwordForm.get('currentPassword')?.invalid && passwordForm.get('currentPassword')?.touched">
+            <small class="error">current password is required.</small>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="newPassword">new password</label>
+          <input
+            type="password"
+            id="newPassword"
+            formControlName="newPassword"
+            placeholder="enter new password"
+          />
+          <div *ngIf="passwordForm.get('newPassword')?.invalid && passwordForm.get('newPassword')?.touched">
+            <small class="error">
+              new password is required and must be at least 8 characters long.
+            </small>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="confirmNewPassword">confirm new password</label>
+          <input
+            type="password"
+            id="confirmNewPassword"
+            formControlName="confirmNewPassword"
+            placeholder="confirm new password"
+          />
+          <div *ngIf="passwordForm.hasError('mismatch') && passwordForm.get('confirmNewPassword')?.touched">
+            <small class="error">passwords do not match.</small>
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="passwordForm.invalid">CONFIRM</button>
+      </form>
+    </div>
+  </div>

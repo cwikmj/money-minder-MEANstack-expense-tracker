@@ -1,0 +1,73 @@
+.operations {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &.type-selection {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-top: 20px;
+
+        label {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+
+            input[type="radio"] {
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+input[type="number"],
+select,
+textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.modal-card-foot {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    button:last-child {
+        background: #4b5b66;
+        color: #F5F5F5;
+        border: 1px solid #4b5b66;
+        &:hover {
+            background: #aeaeae;
+        }
+    }
+}
+
+button {
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #4b5b66;
+    color: skyblue;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #3a4a55;
+}

@@ -1,0 +1,70 @@
+.accounts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    height: 30vh;
+    width: 90vw;
+}
+
+.user-info {
+    margin: 20px;
+    min-width: 20vw;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #4b5b66;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: calc(30% - 10px);
+    transition: background-color 0.3s;
+}
+
+.accounts-summary {
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 80%;
+    max-width: 90%;
+}
+
+.summary-card {
+    min-width: 20vw;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: calc(30% - 10px);
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.summary-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #4b5b66;
+    font-weight: bold;
+}
+
+.summary-card p {
+    font-size: 1.2rem;
+    color: #4b5b66;
+    margin-bottom: 10px;
+}
+
+.income-summary {
+    background-color: #d4edda;
+}
+
+.expense-summary {
+    background-color: #ddd;
+}
+
+.balance-summary {
+    background-color: skyblue;
+}
+
+.summary-card:hover {
+    background-color: #eaeaea;
+}

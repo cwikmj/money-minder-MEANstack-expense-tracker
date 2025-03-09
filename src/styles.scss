@@ -1,0 +1,84 @@
+@import '../node_modules/bulma/bulma.scss';
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+html,
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(to bottom, white, gainsboro);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+app-menu {
+    width: 200px;
+    float: left;
+    width: 80px;
+    height: 100vh;
+    background: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    display: flex;
+    justify-content: left;
+    margin-left: 100px;
+    height: calc(90vh - 60px);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.navbar-logo {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.dropdown-item:hover {
+    background-color: #4b5b66;
+}
+
+.sidemenu-button {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.75rem;
+
+    &.active {
+        color: skyblue;
+        background-color: #4b5b66;
+    }
+}
+
+.sidemenu-button:hover {
+    background: #4b5b66;
+}
+
+.dropdown-menu:hover {
+    background-color: #F5F5F5;
+}
+
+.module-loader {
+    position: fixed;
+    background: rgba(#F5F5F5, .5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    button {
+        position: fixed;
+        top: 45%;
+        left: calc(50% - 50px);
+        z-index: inherit;
+    }
+}

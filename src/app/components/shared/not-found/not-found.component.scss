@@ -1,0 +1,40 @@
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    width: 100vw;
+}
+
+.not-found-wrapper {
+    padding: 20px;
+    width: 40vw;
+    max-width: 500px;
+    text-align: center;
+}
+
+.not-found-image {
+    height: 350px;
+}
+
+.not-found-message {
+    color: #4b5b66;
+    font-size: 1.2em;
+    margin-top: 25px;
+}
+
+.go-to-login-button {
+    margin-top: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: skyblue;
+    background-color: #4b5b66;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: darkslategray;
+    }
+}

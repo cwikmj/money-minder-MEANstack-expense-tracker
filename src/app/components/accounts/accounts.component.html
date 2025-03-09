@@ -1,0 +1,19 @@
+<div class="accounts-container">
+    <div class="user-info">
+        <p>{{ user }} - summary</p>
+    </div>
+    <div class="accounts-summary">
+        <div class="summary-card income-summary">
+            <h3>Income Summary</h3>
+            <p>{{ summary.incomes | currency:'PLN' }}</p>
+        </div>
+        <div class="summary-card expense-summary">
+            <h3>Expense Summary</h3>
+            <p>{{ summary.expenses | currency:'PLN' }}</p>
+        </div>
+        <div class="summary-card balance-summary">
+            <h3>Balance Summary</h3>
+            <p>{{ summary.incomes - summary.expenses | currency:'PLN' }}</p>
+        </div>
+    </div>
+</div>

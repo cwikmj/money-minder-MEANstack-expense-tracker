@@ -1,0 +1,67 @@
+<app-alert></app-alert>
+<div class="columns">
+    <div class="column">
+        <div class="date-selector">
+            <select [(ngModel)]="selectedMonth" (ngModelChange)="updateMonthYear()">
+                <option *ngFor="let month of monthRange" [value]="month">
+                    {{ monthNames[month] }}
+                </option>
+            </select>
+            <select [(ngModel)]="selectedYear" (ngModelChange)="updateMonthYear()">
+                <option *ngFor="let year of years" [value]="year">
+                    {{ year }}
+                </option>
+            </select>
+        </div>
+        <div class="calendar">
+        <table>
+                <thead>
+                    <tr>
+                        <th *ngFor="let day of ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']">{{ day }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let week of [].constructor(weeksCalc); let weekIndex = index">
+                        <td *ngFor="let day of [].constructor(7); let dayIndex = index">
+                            <div *ngIf="(weekIndex * 7 + dayIndex) >= firstDayOfMonth && (weekIndex * 7 + dayIndex - firstDayOfMonth) < daysInMonth.length">
+                                <button [ngClass]="{ 'today': isToday(weekIndex * 7 + dayIndex - firstDayOfMonth + 1),
+                                    'operationDay': operationDays.includes(weekIndex * 7 + dayIndex - firstDayOfMonth) }"
+                                    (click)="onDayClick(weekIndex * 7 + dayIndex - firstDayOfMonth + 1)">
+                                    {{ weekIndex * 7 + dayIndex - firstDayOfMonth + 1 }}
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="operations">
+            <ul class="operation-list">
+                <li *ngFor="let item of operations" class="operation-item" [ngClass]="{'income': item.type === 'income'}">
+                    <div class="operation-details">
+                        <strong>{{ item.description }}</strong> - {{ item.type }}: {{ item.amount | currency:'PLN' }} 
+                        <span class="category"> ({{ item.category }})</span>
+                    </div>
+                    <div class="operation-actions">
+                        <button (click)="openModal(item)" class="edit-operation-btn">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button (click)="removeOperation(item._id)" class="remove-operation-btn">
+                            <i class="fas fa-trash-alt"></i> Remove
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="operation-buttons">
+            <button (click)="openModal(null)" class="add-operation-btn">
+                <i class="fas fa-plus"></i> Add Operation
+            </button>
+        </div>
+    </div>
+</div>
+
+<app-add-operation #modal (formSubmit)="addOperation($event)"></app-add-operation>

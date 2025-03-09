@@ -1,0 +1,95 @@
+<app-alert></app-alert>
+<div class="container">
+    <div class="columns is-centered">
+        <div class="box">
+            <form [formGroup]="registrationForm" (ngSubmit)="onRegister()">
+                <!-- First Name Field -->
+                <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" formControlName="name" type="text" placeholder="First Name" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <small *ngIf="registrationForm.get('name')?.touched && registrationForm.get('name')?.invalid" class="help is-danger">
+                            <ng-container *ngIf="registrationForm.get('name')?.errors?.['required']">First Name is required</ng-container>
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Last Name Field -->
+                <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" formControlName="surname" type="text" placeholder="Last Name" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <small *ngIf="registrationForm.get('surname')?.touched && registrationForm.get('surname')?.invalid" class="help is-danger">
+                            <ng-container *ngIf="registrationForm.get('surname')?.errors?.['required']">Last Name is required</ng-container>
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" formControlName="email" type="email" placeholder="Email" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <small *ngIf="registrationForm.get('email')?.touched && registrationForm.get('email')?.invalid" class="help is-danger">
+                            <ng-container *ngIf="registrationForm.get('email')?.errors?.['required']">Email is required</ng-container>
+                            <ng-container *ngIf="registrationForm.get('email')?.errors?.['email']">Please enter a valid email address</ng-container>
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" formControlName="password" type="password" placeholder="Password" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <small *ngIf="registrationForm.get('password')?.touched && registrationForm.get('password')?.invalid" class="help is-danger">
+                            <ng-container *ngIf="registrationForm.get('password')?.errors?.['required']">Password is required</ng-container>
+                            <ng-container *ngIf="registrationForm.get('password')?.errors?.['minlength']">Password must have at least 8 characters</ng-container>
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Confirm Password Field -->
+                <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" formControlName="confirmPassword" type="password" placeholder="Confirm Password" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <small *ngIf="registrationForm.get('confirmPassword')?.touched && registrationForm.get('confirmPassword')?.invalid" class="help is-danger">
+                            <ng-container *ngIf="registrationForm.get('confirmPassword')?.errors?.['required']">Confirmation password is required</ng-container>
+                        </small>
+                        <small *ngIf="registrationForm.hasError('mismatch')" class="help is-danger">
+                            <ng-container>Passwords must match</ng-container>
+                        </small>
+                    </div>
+                </div>
+
+                <button class="button is-dark is-fullwidth" type="submit" [disabled]="!registrationForm.valid || registrationForm.hasError('mismatch')">
+                    REGISTER
+                </button>
+            </form>
+        </div>
+
+        <div class="logo-container">
+            <img src="../../tab-logo.png" alt="MoneyMinder">
+            <div class="login-link">
+                <p>Back to 
+                    <a [routerLink]="['/login']">LOGIN</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div style="margin-bottom: calc(25vh)"></div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<nav class="navbar is-light" style="height: 5rem;" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <img src="../../tab-logo.png" alt="MoneyMinder" class="navbar-logo">
+    </div>
+    <button class="button is-light" disabled>MONEYMINDER</button>
+
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <div class="button is-info is-light">
+                {{ currentTime$ | async }}
+            </div>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <span class="button" [ngClass]=countdownClass (click)="refreshToken()">
+                        session time: {{ countdown }}
+                    </span>
+                    <span class="button is-dark" disabled>
+                        {{ userCreds }}
+                    </span>
+                    <div class="dropdown is-right is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button" aria-haspopup="true" aria-controls="account-dropdown-menu">
+                                <span></span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                <span class="caret"></span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="account-dropdown-menu" role="menu">
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" [routerLink]="['/profile']">
+                                    <span class="icon is-small mr-2">
+                                        <i class="fas fa-user-circle"></i>
+                                    </span>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" [routerLink]="['/settings']">
+                                    <span class="icon is-small mr-2">
+                                        <i class="fas fa-tools"></i>
+                                    </span>
+                                    Settings
+                                </a>
+                                <hr class="dropdown-divider">
+                                <a class="dropdown-item" (click)="onLogout()">
+                                    <span class="icon is-small mr-2">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </span>
+                                    Log Out
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

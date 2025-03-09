@@ -1,0 +1,41 @@
+<div class="columns">
+    <div class="column">
+        <div class="date-selector">
+            <select [(ngModel)]="selectedMonth" (ngModelChange)="updateReport()">
+                <option *ngFor="let month of monthRange" [value]="month">
+                    {{ monthNames[month] }}
+                </option>
+            </select>
+            <select [(ngModel)]="selectedYear" (ngModelChange)="updateReport()">
+                <option *ngFor="let year of years" [value]="year">
+                    {{ year }}
+                </option>
+            </select>
+        </div>
+        <div class="calendar">
+            <div class="chart-container-wrapper">
+                <div #chartContainer class="chart-container"></div>
+            </div>
+            <div class="month-summary">
+                <h3>total: {{ total }} PLN</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="operations">
+            <div *ngIf="monthData.length > 0; else noOperations">
+                <ul class="operation-list">
+                    <li *ngFor="let item of monthData" class="operation-item">
+                        <div class="operation-details">
+                            <strong>{{ item.name }}</strong>: {{ item.value | currency:'PLN' }} 
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <ng-template #noOperations>
+                <p class="no-operations">No operations for this month</p>
+            </ng-template>
+        </div>
+    </div>
+</div>

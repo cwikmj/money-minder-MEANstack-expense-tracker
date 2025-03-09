@@ -1,0 +1,151 @@
+.column {
+    margin: 10px;
+}
+
+.calendar {
+    align-items: center;
+    min-width: 45vw;
+    min-height: 80vh;
+    max-width: none;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    color: #4b5b66;
+    padding-bottom: 10px;
+}
+
+th,
+td {
+    padding: 15px;
+}
+
+button {
+    font-size: 1rem;
+    color: darkslategray;
+    background-color: gainsboro;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+}
+
+.today {
+    color: skyblue;
+    background-color: #4b5b66;
+}
+
+.operationDay {
+    border: 2px solid #4b5b66;
+}
+
+
+.date-selector {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    select {
+        font-size: 1rem;
+        color: darkslategray;
+        background-color: gainsboro;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        width: 48%;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #eaeaea;
+        }
+    }
+}
+
+.operations {
+    min-width: 40vw;
+    margin-top: 15px;
+    margin-right: 15px;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+.operation-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.operation-item {
+    background-color: #F5F5F5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+
+    strong {
+        color: darkslategray;
+    }
+}
+
+.income {
+    background-color: #d4edda;
+}
+
+.operation-details {
+    flex-grow: 1;
+}
+
+.operation-item:hover {
+    background-color: #ddd;
+}
+
+.category {
+    font-style: italic;
+}
+
+.operation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.add-operation-btn {
+    font-size: 1.2rem;
+    color: white;
+    background-color: #4b5b66;
+    border-radius: 5px;
+    width: 90%;
+    height: 50px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-operation-btn:hover {
+    background-color: #3a4a55;
+    transform: scale(1.05);
+}
+
+.operation-actions {
+    display: flex;
+    align-items: center;
+}
+
+.edit-operation-btn, .remove-operation-btn {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    background: transparent;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.edit-operation-btn:hover, .remove-operation-btn:hover {
+    background-color: #F5F5F5;
+    transform: scale(1.05);
+}

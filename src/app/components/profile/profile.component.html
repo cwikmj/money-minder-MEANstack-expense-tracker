@@ -1,0 +1,36 @@
+<app-alert></app-alert>
+<div class="profile-container">
+    <div class="name-form-wrapper">
+        <form [formGroup]="nameForm" (ngSubmit)="onSubmit()">
+            <h2>UPDATE DETAILS</h2>
+
+            <div class="form-group">
+                <label for="name">First Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    formControlName="name"
+                    placeholder="Enter your first name"
+                />
+                <div *ngIf="nameForm.get('name')?.invalid && nameForm.get('name')?.touched">
+                    <small class="error">First name is required.</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="surname">Last Name</label>
+                <input
+                    type="text"
+                    id="surname"
+                    formControlName="surname"
+                    placeholder="Enter your last name"
+                />
+                <div *ngIf="nameForm.get('surname')?.invalid && nameForm.get('surname')?.touched">
+                    <small class="error">Last name is required.</small>
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="nameForm.invalid">UPDATE</button>
+        </form>
+    </div>
+</div>

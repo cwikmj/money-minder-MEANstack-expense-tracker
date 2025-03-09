@@ -1,0 +1,53 @@
+<app-alert></app-alert>
+<div class="container">
+    <div class="row">
+        <div class="logo-container">
+            <img src="../../tab-logo.png" alt="MoneyMinder">
+        </div>
+    </div>
+    <div class="columns is-centered">
+        <div class="box">
+            <h4 class="title is-4">MoneyMinder</h4>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" formControlName="email" type="email" placeholder="email" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <small *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="help is-danger">
+                            <ng-container *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</ng-container>
+                            <ng-container *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email address</ng-container>
+                        </small>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" formControlName="password" type="password" placeholder="password" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <small *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="help is-danger">
+                            <ng-container *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</ng-container>
+                            <ng-container *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long</ng-container>
+                        </small>
+                    </div>
+                </div>
+
+                <button class="button is-dark is-fullwidth" type="submit" [disabled]="!loginForm.valid">
+                    LOGIN
+                </button>
+            </form>
+
+            <div class="register-link">
+                <p>Don't have an account? 
+                    <a [routerLink]="['/register']">Sign Up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div style="margin-bottom: calc(25vh)"></div>
+    </div>
+</div>
