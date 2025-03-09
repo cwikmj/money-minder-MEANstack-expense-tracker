@@ -4,6 +4,8 @@
 
 MoneyMinder is a full-stack web application built using the MEAN stack, which includes MongoDB, Express, Angular, and Node.js. This application allows users to efficiently track their spending patterns, generate reports, and manage their financial accounts. With a user-friendly interface and robust backend, it provides a comprehensive solution for personal finance management.
 
+![132344](https://github.com/user-attachments/assets/4bebd769-a7e4-4d49-bf1e-86dab91da090)
+
 ## Features
 
 * User Authentication: Secure login and registration functionality to protect your data.
@@ -14,6 +16,8 @@ MoneyMinder is a full-stack web application built using the MEAN stack, which in
 * User Profile: Customize your profile settings and preferences.
 * Settings: Adjust application settings to suit your needs.
 
+![132402](https://github.com/user-attachments/assets/24672671-5f08-458b-a428-82cbb31c6457)
+
 ## Safety Features
 MoneyMinder App incorporates several robust security measures to protect user data and ensure safe interactions with the application:
 * JWT Authentication: After logging in, every request includes a Bearer token in the headers. This token is generated using JSON Web Tokens (JWT), which provides a secure way to transmit information between parties as a JSON object. The token has a time limit of 15 minutes, ensuring that even if a token is compromised, its validity is short-lived.
@@ -22,6 +26,8 @@ MoneyMinder App incorporates several robust security measures to protect user da
 * ID Encryption: All IDs sent in HTTP requests or returned to the frontend are encrypted using the built-in crypto library in Node.js. This ensures that sensitive identifiers are not exposed in their raw form, adding another layer of security against potential attacks.
 * Helmet.js: The application uses Helmet.js, a middleware for Express that helps secure HTTP headers. By setting various HTTP headers, Helmet protects against common vulnerabilities such as cross-site scripting (XSS) and clickjacking, enhancing the overall security of the application.
 * Auth Guard and Interceptor: In the Angular frontend, an Auth Guard is implemented to protect routes from unauthorized access. Additionally, an Auth Interceptor is used to automatically attach the Bearer token to outgoing HTTP requests, ensuring that all requests are authenticated.
+
+![132506](https://github.com/user-attachments/assets/0d785c9c-fa03-4bac-9d89-4d6e19b50bd6)
 
 ## Getting Started
 Follow these steps to set up and run the Expense Tracker App on your local machine.
@@ -70,6 +76,8 @@ cd ..
 npm install
 ```
 
+![132545](https://github.com/user-attachments/assets/227bcde5-09b1-4a6b-b34c-86b10e61accf)
+
 ## Running the Application
 
 ### 1. Start the Backend Server
@@ -92,12 +100,16 @@ ng serve
 
 Open your web browser and go to `http://localhost:4200` to access the Expense Tracker App.
 
+![132557](https://github.com/user-attachments/assets/159b5091-97f5-4cc8-90d1-36dccaa53577)
+
 ## Usage
 
 * Registration: Create an account by navigating to the registration page.
 * Login: Use your credentials to log in.
 * Dashboard: Once logged in, you can view your dashboard with an overview of your expenses.
 * Explore Features: Navigate through reports, statistics, accounts management, profile settings, and more!
+
+![132648](https://github.com/user-attachments/assets/231ab68e-9074-486e-b510-38e5dbab75d9)
 
 ## Technologies Used
 ### Frontend
