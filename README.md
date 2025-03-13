@@ -64,7 +64,7 @@ Create a `.env` file in the backend directory with the following variables:
 ```
 MONGODB_URI=<your_mongodb_connection_string>
 JWT_SECRET=<your_jwt_secret>
-CRYPTO)SECRET=<your-encryption-key>
+CRYPTO_SECRET=<your-encryption-key>
 ```
 
 ### 4. Install Frontend Dependencies
